@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:toku/screens/members_page.dart';
+import 'package:toku/screens/nembers_page.dart';
 
 import '../components/category_item.dart';
 
@@ -20,12 +20,12 @@ class Homepage extends StatelessWidget {
         children: [
           SizedBox(height: 10),
           Category(
-            name: 'Members',
+            name: 'Numbers',
             color: 0xffDEB887,
             onTap: () {
               Navigator.push(context, MaterialPageRoute(
                   builder: (context){
-                    return FamilyMembersPage();
+                    return NumbersPage();
                   }) );
             },
           ),
