@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:toku/screens/family_member_page.dart';
 import 'package:toku/screens/nembers_page.dart';
-
 import '../components/category_item.dart';
 
 class Homepage extends StatelessWidget {
@@ -14,6 +14,13 @@ class Homepage extends StatelessWidget {
           'Toku',
           style: TextStyle(color: Colors.white, fontSize: 30),
         ),
+        actions: [PopupMenuButton(
+          iconColor: Colors.white,
+            itemBuilder: (context)=> [
+          PopupMenuItem(child: Text('About')),
+          PopupMenuItem(child: Text('Ask')),
+          PopupMenuItem(child: Text('Settings')),
+        ])],
         backgroundColor: Color(0xff463228),
       ),
       body: Column(
@@ -31,7 +38,11 @@ class Homepage extends StatelessWidget {
           ),
           Category(name: 'Family Members', color: 0xffDEB887,
           onTap: (){
-            print('You are welcome');
+            Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context){
+                  return FamilyMemberPage();
+                }));
           },),
           Category(name: 'Colors', color: 0xffDEB887),
           Category(name: 'Phrases', color: 0xffDEB887),

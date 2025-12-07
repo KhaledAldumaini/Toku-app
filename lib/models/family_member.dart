@@ -1,5 +1,5 @@
-class Number{
-  const Number({
+class FamilyMember{
+  const FamilyMember({
     required this.imagePath,
     required this.jpName,
     required this.enName,
