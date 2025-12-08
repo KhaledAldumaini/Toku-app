@@ -1,5 +1,5 @@
-class FamilyMemberModel {
-  const FamilyMemberModel({
+class ColorModel {
+  const ColorModel({
     required this.imagePath,
     required this.jpName,
     required this.enName,

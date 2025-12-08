@@ -1,28 +1,32 @@
 import 'package:audioplayers/audioplayers.dart';
 import 'package:flutter/material.dart';
-import '../models/number_model.dart';
+import 'package:toku/models/color_model.dart';
 
-class ListItem extends StatelessWidget {
-  const ListItem({super.key, required this.number});
-  final NumberModel number;
+class ColorItem extends StatelessWidget {
+  const ColorItem({
+    super.key,
+    required this.color,
+    required this.containerColor,
+  });
+  final ColorModel color;
+  final Color containerColor;
 
   @override
   Widget build(BuildContext context) {
     return Container(
       margin: EdgeInsets.only(top: 8),
       height: 100,
-      color: Color(0xffDEB887),
+      color: containerColor,
       child: Row(
         children: [
-          Container(color: Colors.white, child: Image.asset(number.imagePath)),
+          Container(color: Colors.white, child: Image.asset(color.imagePath)),
           Padding(
             padding: const EdgeInsets.only(left: 10.0),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(number.jpName, style: TextStyle(fontSize: 20)),
-                Text(number.enName, style: TextStyle(fontSize: 20)),
+                Text(color.jpName, style: TextStyle(fontSize: 20)),
+                Text(color.enName, style: TextStyle(fontSize: 20)),
               ],
             ),
           ),
@@ -32,7 +36,7 @@ class ListItem extends StatelessWidget {
             child: IconButton(
               onPressed: () {
                 final player = AudioPlayer();
-                player.play(AssetSource(number.sound));
+                player.play(AssetSource(color.sound));
               },
               icon: Icon(Icons.play_arrow, size: 30),
             ),
