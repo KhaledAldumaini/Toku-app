@@ -31,8 +31,7 @@ class ListItem extends StatelessWidget {
             padding: const EdgeInsets.only(right: 8.0),
             child: IconButton(
               onPressed: () {
-                final player = AudioPlayer();
-                player.play(AssetSource(number.sound));
+                number.playSound();
               },
               icon: Icon(Icons.play_arrow, size: 30),
             ),

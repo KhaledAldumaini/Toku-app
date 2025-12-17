@@ -1,3 +1,5 @@
+import 'package:audioplayers/audioplayers.dart';
+
 class NumberModel {
   const NumberModel({
     required this.imagePath,
@@ -10,4 +12,9 @@ class NumberModel {
   final String jpName;
   final String enName;
   final String sound;
+
+  void playSound(){
+    final player = AudioPlayer();
+    player.play(AssetSource(this.sound));
+  }
 }

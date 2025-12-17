@@ -35,8 +35,7 @@ class ColorItem extends StatelessWidget {
             padding: const EdgeInsets.only(right: 8.0),
             child: IconButton(
               onPressed: () {
-                final player = AudioPlayer();
-                player.play(AssetSource(color.sound));
+                color.playSound();
               },
               icon: Icon(Icons.play_arrow, size: 30),
             ),

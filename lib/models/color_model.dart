@@ -1,3 +1,5 @@
+import 'package:audioplayers/audioplayers.dart';
+
 class ColorModel {
   const ColorModel({
     required this.imagePath,
@@ -10,4 +12,10 @@ class ColorModel {
   final String jpName;
   final String enName;
   final String sound;
+
+  void playSound(){
+    final player = AudioPlayer();
+    player.play(AssetSource(this.sound));
+  }
+
 }

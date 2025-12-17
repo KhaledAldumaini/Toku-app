@@ -30,8 +30,7 @@ class PhraseItem extends StatelessWidget {
             padding: const EdgeInsets.only(right: 8.0),
             child: IconButton(
               onPressed: () {
-                final player = AudioPlayer();
-                player.play(AssetSource(phrase.sound));
+                phrase.playSound();
               },
               icon: Icon(Icons.play_arrow, size: 30),
             ),
